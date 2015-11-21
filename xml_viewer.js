@@ -35,21 +35,30 @@ var xmlViewer = {
 			if(content == "")
 				return;
 			titleText.className = "element-text";
-			titleText.innerText = "'" + content + "'";
+			titleText.innerText = content;
+			titleText.textContent = content;
+		} else if(element.nodeName === "#comment") {
+			var content = element.textContent.trim();
+			if(content == "")
+				return;
+			titleText.className = "element-comment";
+			titleText.innerText = content;
+			titleText.textContent = content;
 		} else {
 			var toggle = xmlViewer.createElement("span", { className: "element-toggle-expanded" } );
 			toggle.addEventListener("click", xmlViewer.toggleChildrenHidden, false);
 			title.appendChild(toggle);
 			titleText.className = "element-name";
 			titleText.innerText = element.nodeName;
+			titleText.textContent = element.nodeName;
 		}
 		title.appendChild(titleText);
 		if(element.attributes && element.attributes.length > 0) {
 			var attributes = xmlViewer.createElement("div", { className: "attributes-wrapper" });
 			for(var i = 0; i < element.attributes.length; i++) {
 				var attr = xmlViewer.createElement("div", { className: "attribute-wrapper" });
-				var name = xmlViewer.createElement("span", { className: "attribute-name", innerText: element.attributes[i].nodeName });
-				var value = xmlViewer.createElement("span", { className: "attribute-value", innerText: element.attributes[i].value });
+				var name = xmlViewer.createElement("span", { className: "attribute-name", innerText: element.attributes[i].nodeName, textContent: element.attributes[i].nodeName });
+				var value = xmlViewer.createElement("span", { className: "attribute-value", innerText: element.attributes[i].value, textContent: element.attributes[i].value });
 				attr.appendChild(name);
 				attr.appendChild(value);
 				attributes.appendChild(attr);

@@ -1,8 +1,8 @@
-span.element-toggle-expanded:before {
+.element-toggle-expanded:before {
 	content: "+";
 }
 
-span.element-toggle-collapsed:before {
+.element-toggle-collapsed:before {
 	content: "-";
 }
 
@@ -14,7 +14,7 @@ span.element-toggle-collapsed:before {
 	padding: 5px;
 }
 
-span.attribute-name:before {
+.attribute-name:before {
 	content: "@";
 	color: purple;
 }
@@ -23,6 +23,25 @@ span.attribute-name:before {
 	padding: 5px;
 }
 
-span.attribute-name {
+.attribute-name {
 	padding: 5px;
+}
+.element-comment:before {
+	content: "<!-- ";
+	color: green;
+}
+.element-comment:after {
+	content: " -->";
+	color: green;
+}
+.element-text {
+	padding: 20px;
+}
+.element-text:before {
+	color: blue;
+	content: "'";
+}
+.element-text:after {
+	color: blue;
+	content: "'";
 }
