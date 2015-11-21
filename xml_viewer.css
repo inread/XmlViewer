@@ -1,0 +1,28 @@
+span.element-toggle-expanded:before {
+	content: "+";
+}
+
+span.element-toggle-collapsed:before {
+	content: "-";
+}
+
+.element-hidden {
+	display: none;
+}
+
+.element-wrapper {
+	padding: 5px;
+}
+
+span.attribute-name:before {
+	content: "@";
+	color: purple;
+}
+
+.attribute-wrapper {
+	padding: 5px;
+}
+
+span.attribute-name {
+	padding: 5px;
+}
